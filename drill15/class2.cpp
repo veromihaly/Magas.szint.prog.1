@@ -27,6 +27,11 @@ class Person{
 					case '"' :
 					case '&' :
 					case '!' :
+					case '@' :
+					case ';' :
+					case '*' :
+					case '#' :
+					/*case ''' :*/
 						throw runtime_error ("Invalid character");
 						break;
 					default:
