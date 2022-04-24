@@ -98,7 +98,17 @@ try{
 	}
 	cout << "Sum: "<<sum << '\n';
 	
-	//utolsó feladat kimaradt
+	Matrix<int,2> six_ints(2,3);
+    	cout << "Enter six ints." << "\n";
+
+   	for(int i=0; i<six_ints.dim1(); i++)
+        	for(int j=0; j<six_ints.dim2(); j++)
+       	{
+           	 cin >> six_ints(i, j);
+       	}
+  	cout << six_ints << "\n";
+
+   	return 0;
 	
 }catch(exception& e){
 	cerr << "Exception: " << e.what() << '\n';
