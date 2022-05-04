@@ -3,25 +3,25 @@
 
 using namespace std;
 
-class A{
+template<typename T>class A{
 	public:
 		virtual void vf() {cout <<"A::vf()"<<endl;}
-		void f() {cout << "A::f()"<<endl;}
-		virtual void pvf() const = 0; //absztraktá teszi az osztályt//
+		virtual void f() {cout << "A::f()"<<endl;}
+		virtual void pvf() = 0; 
 };
 
-class B : public A {
-public:
-	virtual void vf() {cout <<"B::vf()"<<endl;}
-	void f() {cout << "B::f()"<<endl;}
-	void pvf() const { std::cout << "B::pvf()\n"; }
+template<typename T>
+class B : public A<T> {
+	public:
+		void vf() {cout <<"B::vf()"<<endl;}
+		void f() {cout << "B::f()"<<endl;}
+		void pvf(){ std::cout << "B::pvf()\n"; }
 };
-
 
 int main(){
 	
 	B b;
-	b.vf();	
-	b.f();
-	b.pvf();
+	b.vf();
+	
+	return 0;	
 }
